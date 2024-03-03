@@ -4,6 +4,7 @@ import { checkValidData } from "../utils/Validate";
 
 export const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
+  const [errorMsg, setErrorMsg] = useState("");
 
   const email = useRef(null);
   const password = useRef(null);
@@ -18,7 +19,9 @@ export const Login = () => {
       email.current.value,
       password.current.value
     );
-    console.log(validationMsg);
+    setErrorMsg(validationMsg);
+
+    // Sign In redirection or Sign Up
   };
 
   return (
@@ -39,6 +42,8 @@ export const Login = () => {
         <h1 className="text-4xl my-3 pb-3">
           {isSignInForm ? "Sign In" : "Sign Up"}
         </h1>
+        <p className="py-2 text-red-500 text-lg">{errorMsg}</p>
+
         {!isSignInForm && (
           <input
             type="text"
