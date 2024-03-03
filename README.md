@@ -15,3 +15,7 @@
 - Movie GPT
   - Search bar
   - Movie suggestions
+
+## Notes
+
+- For bigger forms use a library called Formik
