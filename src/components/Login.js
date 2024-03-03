@@ -14,7 +14,11 @@ export const Login = () => {
 
   const handleButtonClick = () => {
     // Validate the form data
-    checkValidData(email.current.value, password.current.value);
+    const validationMsg = checkValidData(
+      email.current.value,
+      password.current.value
+    );
+    console.log(validationMsg);
   };
 
   return (
